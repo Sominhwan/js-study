@@ -48,8 +48,9 @@
   //   console.log(`${arr} push("g") : ${arr.push("g")}`);
   //   console.log(arr);
   console.log(`${arr} : ${arr.join(" ")}`);
-  console.log(`${arr} : ${arr.reverse()}`);
+  //console.log(`${arr} : ${arr.reverse()}`);
 
+  arr.forEach((element) => console.log(element));
   // forEach, filter, map, reduce, every, find, some
   // forEach -> 반복작업
   //   const callbakcfn = (value) => {
@@ -69,11 +70,66 @@
   console.log(arr.map((value) => value));
 
   // reduce -> 요소 합치기
+  //const array1 = [1, 2, 3, 4];
+  //   const initialValue = 0;
+  //   const sumWithInitial = array1.reduce(
+  //     (accumulator, currentValue) => accumulator + currentValue,
+  //     initialValue
+  //   );
+
+  // console.log(sumWithInitial);
+
   // every -> 모든 요소가 조건에 부합하는지
-  // some -> 하나으 ㅣ요소라도 조건에 부합하는지
+  //const isBelowThreshold = (currentValue) => currentValue < 40;
+  //const array1 = [1, 30, 39, 29, 10, 13];
+  // console.log(array1.every(isBelowThreshold));
+
+  //i;
+
+  // some -> 하나의 요소라도 조건에 부합하는지
+  //const array = [1, 2, 3, 4, 5];
+
+  // Checks whether an element is even
+  //const even = (element) => element % 2 === 0;
+
+  //console.log(array.some(even));
+
   // find -> 조건에 부합하는 요소 찾기
+  //const array1 = [5, 12, 8, 130, 44];
+  // const found = array1.find((element) => element > 10);
+
+  //console.log(found);
 
   // obj
+  const obj = {
+    key: "value",
+    func: (value) => value,
+    array: [1, 2, 3, 4],
+    obj: {
+      key: "value1",
+    },
+  };
+  console.log(obj.key);
+  console.log(obj.obj.key);
+  console.log(obj.func());
+
   // Math
+  console.log(Math.PI); //3.14
+  console.log(Math.abs(-1)); //절댓값
+  console.log(Math.ceil(1.2)); //올림
+  console.log(Math.floor(1.5)); //내림
+  console.log(Math.round(1.5)); //반올림
+  console.log(Math.pow(2, 3)); //2^3=8
+  console.log(Math.max(1, 2, 3)); //3
+  console.log(Math.min(1, 2, 3)); //1
+  console.log(Math.floor(Math.random() * 10)); //0~9 사이의 난수
+
   // Date
+  console.log(Date.now()); //1970년 1월1일 12시 정각부터 ms 단위로 숫자를 리턴
+  const myDate = new Date("2020-11-10 00:00:00");
+  console.log(myDate); //Date 클래스에 넣은 값을 리턴
+  console.log(myDate.getFullYear()); //Date 클래스에 넣은 year 값 리턴
+  console.log(myDate.getFullMonth()); //Date 클래스에 넣은 month-1 값 리턴
+  console.log(myDate.getFullDate()); //Date 클래스에 넣은 day 값 리턴
+  console.log(myDate.getFullDay()); //Date 클래스에 넣은 요일 값 리턴
 </script>
