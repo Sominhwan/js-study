@@ -8,9 +8,11 @@
     //     }
     //   }
     let result = false;
-    const correct = Math.floor(Math.random() * 1000);
-    const answer = prompt(`${correct}를 입력해 주세요.`);
+    const correct = Math.floor(Math.random() * 1000); //숫자형
+    const answer = prompt(`${correct}를 입력해 주세요.`); //문자형
+    //숫자형으로 변환할 경우 String(prompt(`${correct}를 입력해 주세요.`)); 사용
     result = correct == answer;
+    // === 을 쓸려면 correct, answer 형이 같아야함
 
     if (result) {
       alert("정답입니다.");
