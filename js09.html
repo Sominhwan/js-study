@@ -50,9 +50,46 @@
     </div>
   </body>
   <script>
+    fetch(
+      "https://apis.data.go.kr/6260000/AttractionService/getAttractionKr?serviceKey=KmPzcGQ5PCcraF4sRF2nw3lzJFd%2FO32LKptEAZtAFZXe8y8cBaNU8xo5HXLMQhmQvo0hbUPQawobLltt%2FX25YQ%3D%3D&pageNo=1&numOfRows=10&resultType=json"
+    ) //공공데이터에 가져온 api 링크 추가
+      .then((res) => res.json()) //json 형식으로 변환
+      .then((response) => {
+        const cards = response.getAttractionKr.item; //api 데이터 변환
+
+        const cardGroup = document.getElementById("cardGroup");
+
+        cards.forEach((value, index) => {
+          //col m-3 -> 카드 사이 넓이 3 으로 고정
+          cardGroup.insertAdjacentHTML(
+            "beforeend",
+            `<div class="col "> 
+          <div class="card m-3">
+            <img
+              src="${value.MAIN_IMG_THUMB}"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">
+                <a href="${value.HOMEPAGE_URL}" target="_blank">${value.MAIN_TITLE}</a>
+                </h5>
+              <p class="card-text">
+                ${value.TITLE}, ${value.SUBTITLE}
+              </p>
+              <p class="card-text">
+                <small class="text-muted">${value.CNTCT_TEL}</small>
+              </p>
+            </div>
+          </div>
+        </div>`
+          );
+        });
+      });
+
     // const cards = [0, 0, 0, 0, 0, 0, 0];
     const cards = new Array(7).fill(0);
-
+    /*
     const cardGroup = document.getElementById("cardGroup");
 
     cards.forEach((value, index) => {
@@ -80,6 +117,6 @@
           </div>
         </div>`
       );
-    });
+    });*/
   </script>
 </html>
